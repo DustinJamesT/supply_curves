@@ -1,0 +1,7 @@
+env name: messari-djt (source ~/.virtualenvs/messari-djt/bin/activate)
+
+packages:
+  'pandas'
+  'messari': https://github.com/messari/messari-python-api-private.git
+  'jupyterlab' (run: jupyter-lab)
+  'matplotlib'
