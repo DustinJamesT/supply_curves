@@ -88,7 +88,8 @@ class subgraph:
     # Snapshots
     async def loop_timestamp_query(self, query: Dict, session) -> pd.DataFrame:
 
-        response = await session.post(self.url, json=query)
+        #response = await session.post(self.url, json=query)
+        response = requests.post(self.url,json=query).json()
         response = await response.json()
 
         # Error catching
@@ -111,7 +112,8 @@ class subgraph:
             print(timestamp, pd.to_datetime(timestamp, unit='s')) # progress bar
 
             # Get response
-            response = await session.post(self.url, json=query)
+            #response = await session.post(self.url, json=query)
+            response = await requests.post(self.url,json=query).json()
             response = await response.json()
 
             # handle data
